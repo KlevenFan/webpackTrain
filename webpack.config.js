@@ -21,7 +21,14 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `[name]_[contenthash:8].css`
+      filename: `[name].css`
     })
   ],
+  devServer: {
+    contentBase: path.join(__dirname),
+    compress: true,
+    port: 9000,
+    watchContentBase: true,
+    hotOnly: true,
+  },
 };
